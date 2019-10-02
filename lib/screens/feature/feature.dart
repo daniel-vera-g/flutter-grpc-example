@@ -23,3 +23,5 @@ class Feature extends StatelessWidget {
     );
   }
 }
+
+export 'feature.dart';
