@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/widgets/app_button/index.dart';
+import 'package:flutter_grpc/widgets/app_button/app_button.dart';
 
 class TestButton extends StatelessWidget {
 

@@ -24,5 +24,3 @@ class AppButton extends StatelessWidget {
     );
   }
 }
-
-export 'app_button.dart';
