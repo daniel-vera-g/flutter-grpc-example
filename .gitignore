@@ -9,6 +9,7 @@
 .history
 .svn/
 tags
+TODO.txt
 
 # IntelliJ related
 *.iml
