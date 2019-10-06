@@ -80,7 +80,7 @@ packages:
       name: grpc
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.8+1"
+    version: "2.1.2"
   http:
     dependency: transitive
     description:
@@ -94,7 +94,7 @@ packages:
       name: http2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.9"
+    version: "1.0.0"
   http_parser:
     dependency: transitive
     description:
@@ -136,7 +136,7 @@ packages:
       name: protobuf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.8"
+    version: "1.0.0"
   quiver:
     dependency: transitive
     description:
