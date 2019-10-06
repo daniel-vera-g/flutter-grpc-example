@@ -22,3 +22,15 @@ const BirthdayStatus$json = const {
   ],
 };
 
+const BirthdayCheckerServiceBase$json = const {
+  '1': 'BirthdayChecker',
+  '2': const [
+    const {'1': 'checkBirthday', '2': '.birthday.Date', '3': '.birthday.BirthdayStatus'},
+  ],
+};
+
+const BirthdayCheckerServiceBase$messageJson = const {
+  '.birthday.Date': Date$json,
+  '.birthday.BirthdayStatus': BirthdayStatus$json,
+};
+

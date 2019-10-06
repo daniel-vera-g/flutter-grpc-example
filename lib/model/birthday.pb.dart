@@ -5,6 +5,7 @@
 // @dart = 2.3
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
+import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart';
@@ -78,5 +79,15 @@ class BirthdayStatus extends $pb.GeneratedMessage {
   set age(Int64 v) { $_setInt64(1, v); }
   $core.bool hasAge() => $_has(1);
   void clearAge() => clearField(2);
+}
+
+class BirthdayCheckerApi {
+  $pb.RpcClient _client;
+  BirthdayCheckerApi(this._client);
+
+  $async.Future<BirthdayStatus> checkBirthday($pb.ClientContext ctx, Date request) {
+    var emptyResponse = BirthdayStatus();
+    return _client.invoke<BirthdayStatus>(ctx, 'BirthdayChecker', 'checkBirthday', request, emptyResponse);
+  }
 }
 

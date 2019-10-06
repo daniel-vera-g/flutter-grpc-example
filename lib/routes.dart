@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'screens/feature/feature.dart';
+import 'screens/birthday_form/send_birthday.dart';
 
+// TODO
 class Routes {
   final routes = <String, WidgetBuilder>{
-    '/Feature': (BuildContext context) => new Feature()
+    '/SendBirthday': (BuildContext context) => SendBirthday()
   };
 
   Routes () {
-    runApp(new MaterialApp(
+    runApp(MaterialApp(
       title: 'Flutter Template',
+      // TODO
       routes: routes,
-      home: new Feature(),
+      home: SendBirthday(),
     ));
   }
 }
