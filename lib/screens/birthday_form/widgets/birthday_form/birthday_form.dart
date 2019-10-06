@@ -18,14 +18,44 @@ class _BirthdayFormState extends State<BirthdayForm> {
        crossAxisAlignment: CrossAxisAlignment.center,
        children: <Widget>[
         //  TODO export to external widget file
-        TextFormField(
-          validator: (value) {
-            if (value.isEmpty) {
-              return "Please enter some text";
-            }
-            return null;
-          },
+        // TODO add option to select from calendar
+        // TODO style forms better with margin, padding, ...
+      TextFormField(
+        decoration: const InputDecoration(
+          hintText: "Enter your birth year",
+          labelText: "Birth year"
         ),
+        validator: (value) {
+          if (value.isEmpty) {
+            return "Please enter some text";
+          }
+          return null;
+        },
+      ),
+      TextFormField(
+        decoration: const InputDecoration(
+          hintText: "Enter your birth month",
+          labelText: "Birth month"
+        ),
+        validator: (value) {
+          if (value.isEmpty) {
+            return "Please enter some text";
+          }
+          return null;
+        },
+      ),
+      TextFormField(
+        decoration: const InputDecoration(
+          hintText: "Enter your birth day",
+          labelText: "Birth day"
+        ),
+        validator: (value) {
+          if (value.isEmpty) {
+            return "Please enter some text";
+          }
+          return null;
+        },
+      ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           // TODO use button in external file
