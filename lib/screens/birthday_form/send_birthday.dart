@@ -9,7 +9,10 @@ class SendBirthday extends StatelessWidget {
       appBar: AppBar(
         title: Text("Birthday calculator"),
       ),
-      body: BirthdayForm(),
+      body: new Container(
+        padding: EdgeInsets.all(20.0),
+        child: BirthdayForm(),
+      )
     );
   }
 }
