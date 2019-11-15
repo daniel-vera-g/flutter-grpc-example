@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/birthday_form/send_birthday.dart';
 
-// TODO
 class Routes {
 
   final routes = <String, WidgetBuilder>{
@@ -10,8 +9,7 @@ class Routes {
 
   Routes () {
     runApp(MaterialApp(
-      title: 'Flutter Template',
-      // TODO
+      title: 'Flutter Birthday checker',
       routes: routes,
       home: SendBirthday(),
     ));
