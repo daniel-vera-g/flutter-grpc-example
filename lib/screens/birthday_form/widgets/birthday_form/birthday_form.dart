@@ -14,15 +14,13 @@ class _BirthdayFormState extends State<BirthdayForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-
       key: _formKey,
-      
+
       // List of input forms
       child: ListView(
+
         children: <Widget>[
-          //  TODO export to external widget file
-          // TODO add option to select from calendar
-          // TODO style forms better with margin, padding, ...
+
           TextFormField(
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
@@ -34,6 +32,7 @@ class _BirthdayFormState extends State<BirthdayForm> {
               return null;
             },
           ),
+
           TextFormField(
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
@@ -45,6 +44,7 @@ class _BirthdayFormState extends State<BirthdayForm> {
               return null;
             },
           ),
+
           TextFormField(
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
@@ -56,16 +56,16 @@ class _BirthdayFormState extends State<BirthdayForm> {
               return null;
             },
           ),
+
+//          Button to send data
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            // TODO use button in external file
             child: RaisedButton(
               onPressed: () {
                 if (_formKey.currentState.validate()) {
                   Scaffold.of(context).showSnackBar(SnackBar(
                     content: Text('Processing Data'),
                   ));
-                  // TODO this ok?
                 }
               },
               child: Text("Submit"),

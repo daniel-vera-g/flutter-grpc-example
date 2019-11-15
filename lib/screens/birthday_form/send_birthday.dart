@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './widgets/birthday_form/birthday_form.dart';
 
+// Screen to send birthday information
 class SendBirthday extends StatelessWidget {
 
   @override
