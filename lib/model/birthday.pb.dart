@@ -5,17 +5,15 @@
 // @dart = 2.3
 // ignore_for_file: camel_case_types,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
-import 'package:fixnum/fixnum.dart';
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class Date extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('Date', package: const $pb.PackageName('birthday'), createEmptyInstance: create)
-    ..aInt64(1, 'day')
-    ..aInt64(2, 'month')
-    ..aInt64(3, 'year')
+    ..a<$core.int>(1, 'day', $pb.PbFieldType.O3)
+    ..a<$core.int>(2, 'month', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, 'year', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -33,18 +31,18 @@ class Date extends $pb.GeneratedMessage {
   static Date getDefault() => _defaultInstance ??= create()..freeze();
   static Date _defaultInstance;
 
-  Int64 get day => $_getI64(0);
-  set day(Int64 v) { $_setInt64(0, v); }
+  $core.int get day => $_get(0, 0);
+  set day($core.int v) { $_setSignedInt32(0, v); }
   $core.bool hasDay() => $_has(0);
   void clearDay() => clearField(1);
 
-  Int64 get month => $_getI64(1);
-  set month(Int64 v) { $_setInt64(1, v); }
+  $core.int get month => $_get(1, 0);
+  set month($core.int v) { $_setSignedInt32(1, v); }
   $core.bool hasMonth() => $_has(1);
   void clearMonth() => clearField(2);
 
-  Int64 get year => $_getI64(2);
-  set year(Int64 v) { $_setInt64(2, v); }
+  $core.int get year => $_get(2, 0);
+  set year($core.int v) { $_setSignedInt32(2, v); }
   $core.bool hasYear() => $_has(2);
   void clearYear() => clearField(3);
 }
@@ -52,7 +50,7 @@ class Date extends $pb.GeneratedMessage {
 class BirthdayStatus extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('BirthdayStatus', package: const $pb.PackageName('birthday'), createEmptyInstance: create)
     ..aOB(1, 'status')
-    ..aInt64(2, 'age')
+    ..a<$core.int>(2, 'age', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
   ;
 
@@ -75,19 +73,9 @@ class BirthdayStatus extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(0);
   void clearStatus() => clearField(1);
 
-  Int64 get age => $_getI64(1);
-  set age(Int64 v) { $_setInt64(1, v); }
+  $core.int get age => $_get(1, 0);
+  set age($core.int v) { $_setSignedInt32(1, v); }
   $core.bool hasAge() => $_has(1);
   void clearAge() => clearField(2);
-}
-
-class BirthdayCheckerApi {
-  $pb.RpcClient _client;
-  BirthdayCheckerApi(this._client);
-
-  $async.Future<BirthdayStatus> checkBirthday($pb.ClientContext ctx, Date request) {
-    var emptyResponse = BirthdayStatus();
-    return _client.invoke<BirthdayStatus>(ctx, 'BirthdayChecker', 'checkBirthday', request, emptyResponse);
-  }
 }
 
