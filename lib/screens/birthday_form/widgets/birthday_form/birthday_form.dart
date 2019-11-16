@@ -8,19 +8,29 @@ class BirthdayForm extends StatefulWidget {
 }
 
 class _BirthdayFormState extends State<BirthdayForm> {
+  int response;
+  String status;
+
+  @override
+  void initState() {
+    this.response = null;
+    this.status = "";
+    super.initState();
+  }
+
+//  TODO
   // Form key to make input validation
-  final _formKey = GlobalKey<FormState>();
+//  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
+//      TODO
+//      key: _formKey,
 
       // List of input forms
       child: ListView(
-
         children: <Widget>[
-
           TextFormField(
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
@@ -61,23 +71,45 @@ class _BirthdayFormState extends State<BirthdayForm> {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: RaisedButton(
-              onPressed: () {
-                if (_formKey.currentState.validate()) {
-                  Scaffold.of(context).showSnackBar(SnackBar(
-                    content: Text('Processing Data'),
-                  ));
-                }
-              },
+             onPressed: () {
+               _getBirthday();
+               setState(() {
+                 status = "Making request...";
+
+               });
+             },
+
+
+//              TODO
+//              onPressed: () {
+//                if (_formKey.currentState.validate()) {
+//                  () async => _getBirthday();
+//                  Scaffold.of(context).showSnackBar(SnackBar(
+//                    content: Text('Processing Data'),
+//                  ));
+//                }
+//              },
+
               child: Text("Submit"),
             ),
-          )
+          ),
+
+          Text(status),
+
+//          response != null
+//              ? Text("Server says $response")
+//              : Text("Loading: ....")
         ],
       ),
     );
   }
-}
 
-// TODO create handler
-//Future<void> _getBirthday() async {
-//  var birthdayInfo = await BirthdayService.checkBirthday();
-//}
+// Handler for the birthday information
+  Future<void> _getBirthday() async {
+    var birthdayInfo = await BirthdayService.checkBirthday();
+    setState(() {
+      response = birthdayInfo.age;
+      status = "Request was successfull. Value got: $response";
+    });
+  }
+}
