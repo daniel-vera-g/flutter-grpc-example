@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grpc/services/birthday_service.dart';
+import 'package:flutter_grpc/screens/birthday_form/widgets/birthday_form_field/birthday_form_field.dart';
 
 class BirthdayForm extends StatefulWidget {
   BirthdayForm({Key key}) : super(key: key);
@@ -31,17 +32,18 @@ class _BirthdayFormState extends State<BirthdayForm> {
       // List of input forms
       child: ListView(
         children: <Widget>[
-          TextFormField(
-            keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-                hintText: "Enter your birth year", labelText: "Birth year"),
-            validator: (value) {
-              if (value.isEmpty) {
-                return "Please enter some text";
-              }
-              return null;
-            },
-          ),
+          BirthdayFormWidget(),
+//          TextFormField(
+//            keyboardType: TextInputType.number,
+//            decoration: const InputDecoration(
+//                hintText: "Enter your birth year", labelText: "Birth year"),
+//            validator: (value) {
+//              if (value.isEmpty) {
+//                return "Please enter some text";
+//              }
+//              return null;
+//            },
+//          ),
 
           TextFormField(
             keyboardType: TextInputType.number,
@@ -95,6 +97,7 @@ class _BirthdayFormState extends State<BirthdayForm> {
           ),
 
           Text(status),
+Text(response.toString())
 
 //          response != null
 //              ? Text("Server says $response")
